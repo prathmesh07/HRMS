@@ -1,0 +1,51 @@
+<%= form_with(model: person) do |form| %>
+  <% if person.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(person.errors.count, "error") %> prohibited this person from being saved:</h2>
+
+      <ul>
+        <% person.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field form-group">
+    <%= form.text_field :first_name ,class:"form-control", placeholder:"First Name" %>
+  </div>
+
+  <div class="field form-group">
+
+    <%= form.text_field :last_name, class:"form-control", placeholder:"Last Name" %>
+  </div>
+
+  <div class="field form-group">
+ 
+    <%= form.text_field :email, class:"form-control", placeholder:"Email" %>
+  </div>
+
+  <div class="field form-group">
+
+    <%= form.text_field :phone, class:"form-control", placeholder:"Phone" %>
+  </div>
+
+  <div class="field form-group">
+
+    <%= form.text_field :city, class:"form-control", placeholder:"City" %>
+  </div>
+
+  <div class="field form-group">
+
+    <%= form.text_field :position, class:"form-control", placeholder:"Position" %>
+  </div>
+
+  <div class="field form-group">
+   
+    <%= form.number_field :salary, class:"form-control", placeholder:"Salary" %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
